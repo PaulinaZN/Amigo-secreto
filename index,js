@@ -1,0 +1,37 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const amigos = [];
+    const inputNombre = document.getElementById('nombre');
+    const btnAdicionar = document.getElementById('adicionar');
+    const btnSortear = document.getElementById('sortear');
+    const amigosList = document.getElementById('amigosList');
+    const resultado = document.getElementById('resultado');
+
+    btnAdicionar.addEventListener('click', () => {
+        const nombre = inputNombre.value.trim();
+        if (nombre === '') {
+            alert('Por favor, ingresa un nombre válido.');
+            return;
+        }
+        amigos.push(nombre);
+        inputNombre.value = '';
+        mostrarLista();
+    });
+
+    btnSortear.addEventListener('click', () => {
+        if (amigos.length === 0) {
+            alert('No hay amigos en la lista para sortear.');
+            return;
+        }
+        const amigoSecreto = amigos[Math.floor(Math.random() * amigos.length)];
+        resultado.textContent = `El amigo secreto es: ${amigoSecreto}`;
+    });
+
+    function mostrarLista() {
+        amigosList.innerHTML = '';
+        amigos.forEach(amigo => {
+            const li = document.createElement('li');
+            li.textContent = amigo;
+            amigosList.appendChild(li);
+        });
+    }
+});
