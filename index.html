@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo de Amigo Secreto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #lista {
+            margin-top: 20px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteo de Amigo Secreto</h1>
+    <input type="text" id="nombre" placeholder="Ingresa el nombre de tu amigo">
+    <button id="adicionar">Adicionar</button>
+    <button id="sortear">Sortear Amigo</button>
+
+    <div id="lista">
+        <h2>Lista de Amigos:</h2>
+        <ul id="amigosList"></ul>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
